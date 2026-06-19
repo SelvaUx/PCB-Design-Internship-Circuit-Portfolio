@@ -1,0 +1,156 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "9ffdf314-cef6-49ea-9c72-045033b442b7")
+	(paper "A4")
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 73.66 60.96) (xy 158.75 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "755ca074-db25-4aa8-af1a-a6b980b2f904")
+	)
+	(wire
+		(pts
+			(xy 73.66 72.39) (xy 73.66 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ffa5ee6-2c1d-48f0-91b0-879c3e6135a5")
+	)
+	(wire
+		(pts
+			(xy 158.75 60.96) (xy 158.75 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e76969d2-a2fb-429e-9e09-3dcc15298bdc")
+	)
+	(sheet
+		(at 73.66 72.39)
+		(size 76.2 57.15)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "5ce07317-c0da-4fbf-8638-06f771954658")
+		(property "Sheetname" "LED Circuit"
+			(at 73.66 71.6784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "led.kicad_sch"
+			(at 73.66 130.1246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "power" output
+			(at 73.66 72.39 90)
+			(uuid "3d89cec4-754b-42b8-bc02-66ae374ff8be")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Simple LED Circuit"
+				(path "/9ffdf314-cef6-49ea-9c72-045033b442b7"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 158.75 72.39)
+		(size 76.2 57.15)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "69eb7d72-7135-450c-83de-41555f702455")
+		(property "Sheetname" "Power Circuit"
+			(at 158.75 71.6784 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "power.kicad_sch"
+			(at 158.75 130.1246 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "Power" output
+			(at 158.75 72.39 90)
+			(uuid "450ba793-23c5-479a-8037-11a7d1c1410c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "Simple LED Circuit"
+				(path "/9ffdf314-cef6-49ea-9c72-045033b442b7"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

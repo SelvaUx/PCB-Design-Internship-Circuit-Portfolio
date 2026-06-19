@@ -1,0 +1,23 @@
+# KiCad lock files
+~*.lck
+
+# KiCad backup files
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*-backups/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Empty folders
+New folder/
+
+# KiCad local history (embedded git repos — must exclude)
+**/.history/
+.history/
