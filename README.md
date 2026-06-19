@@ -56,8 +56,7 @@ From custom AI assistants to fiber fault detection engines, from IoT aquaculture
 ├── ⚙️ Motor Speed Controller/    → PWM DC motor speed control via L293 H-Bridge
 ├── 💡 Simple LED Circuit/        → Hierarchical push-button LED (multi-sheet)
 ├── ⚡ Voltage Divider/           → Two-resistor voltage divider
-├── 🔌 Voltage Regulator/         → +5V linear supply (hierarchical design)
-├── 🔌 Voltage Regulator - Copy/  → Same circuit, flat single-sheet layout
+├── 🔌 Voltage Regulator/         → +5V linear regulated power supply
 └── 📄 README.md
 ```
 
@@ -308,22 +307,23 @@ $$V_{out} = V_{in} \cdot \frac{R2}{R1 + R2} = 5\text{V} \cdot \frac{1\text{k}\Om
 | | |
 |---|---|
 | **Category** | Power Electronics — Linear Regulated Supply |
-| **Schematic** | `Voltage Regulator/Voltage Regulator.kicad_sch` (Master) |
+| **Schematic** | `Voltage Regulator/Voltage Regulator.kicad_sch` |
 | **PCB** | `Voltage Regulator/Voltage Regulator.kicad_pcb` |
 
 **Circuit Goal:** A complete +5V regulated linear power supply that rectifies AC input, filters noise, and outputs a stable 5V DC rail.
 
-**Schematic Architecture (Hierarchical):**
+**Bill of Materials:**
 
-| Sheet | Components | Role |
-|-------|------------|------|
-| **Master** (`Voltage Regulator.kicad_sch`) | — | Links input → regulation → output |
-| **Input** (`input.kicad_sch`) | D1–D4: Bridge Rectifier, J1: Screw Terminal | AC/DC input & rectification |
-| **Main** (`main.kicad_sch`) | U1: `L7805` Regulator, C1: `2200µF`, C2: `10µF` | Voltage regulation & filtering |
-| **Output** (`output.kicad_sch`) | D5: Green LED, R1: `330Ω`, J2: Screw Terminal | Power indicator & output |
-
-**Flat Design Alternative:**
-The `Voltage Regulator - Copy/` folder contains the exact same circuit laid out **non-hierarchically on a single flat sheet** for direct visualization of all connections.
+| Ref | Component | Value | Purpose |
+|-----|-----------|-------|---------|
+| D1–D4 | `1N4007` Rectifier Diode | — | Full-wave bridge rectifier |
+| U1 | `L7805` Linear Voltage Regulator | +5V | Voltage regulation |
+| C1 | Electrolytic Capacitor | `2200µF` | Reservoir / ripple smoothing |
+| C2 | Capacitor | `10µF` | Output decoupling |
+| D5 | Green LED | — | Power-on indicator |
+| R1 | Resistor | `330Ω` | LED current-limiting |
+| J1 | 2-pin Screw Terminal | — | AC/DC input connector |
+| J2 | 2-pin Screw Terminal | — | +5V / GND output connector |
 
 **How It Works:** AC input is rectified by the diode bridge, filtered by the `2200µF` reservoir capacitor, and then regulated to a stable +5V by the L7805 linear regulator. The `10µF` output capacitor filters high-frequency transients. A green LED with a `330Ω` resistor provides a visual power-on indicator.
 
@@ -342,7 +342,7 @@ The `Voltage Regulator - Copy/` folder contains the exact same circuit laid out 
 | 7 | Motor Speed Controller | 12+ | ICM7555 + L293 | Flat | ✅ |
 | 8 | Simple LED Circuit | 4 | — | Hierarchical | ✅ |
 | 9 | Voltage Divider | 3 | — | Flat | ✅ |
-| 10 | Voltage Regulator | 9 | L7805 | Hierarchical | ✅ |
+| 10 | Voltage Regulator | 9 | L7805 | Flat | ✅ |
 
 ---
 
@@ -356,7 +356,7 @@ The `Voltage Regulator - Copy/` folder contains the exact same circuit laid out 
 | **Passive Filters (RC)** | Low Pass Filter |
 | **Voltage Regulation** | Voltage Regulator (L7805) |
 | **Motor Drive (H-Bridge)** | Motor Speed Controller (L293) |
-| **Hierarchical Schematic Design** | Simple LED Circuit, Voltage Regulator |
+| **Hierarchical Schematic Design** | Simple LED Circuit |
 | **PWM Speed Control** | Motor Speed Controller |
 
 ---
